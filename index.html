@@ -2,23 +2,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kyledar - Make your walls aesthetic</title>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Kyledar - Make Your Walls Aesthetic</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{margin:0;font-family:Arial;background:#f4efe6;color:#222;}
-header{padding:20px;text-align:center;font-size:34px;font-family:Georgia;background:#222;color:#f4efe6;}
-.hero{background:#e0d5c5; height:280px; display:flex;align-items:center;justify-content:center;color:#222;font-size:32px;font-weight:bold;}
+header{padding:20px;text-align:center;font-size:32px;background:#222;color:#f4efe6;font-family:Georgia;}
+.hero{background:url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=60') center/cover; height:350px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; text-shadow:0px 2px 4px #000;}
+.hero h1{font-size:40px;margin:0;}
+.hero button{margin-top:15px;background:#222;color:#fff;padding:14px 24px;border:none;border-radius:4px;font-size:18px;}
 .sec{padding:20px;text-align:center;}
-.button{background:#222;color:#fff;padding:14px 24px;text-decoration:none;border-radius:4px;}
-.footer{background:#222;color:#fff;padding:20px;text-align:center;margin-top:20px;}
+.feature-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:20px;padding:20px;}
+.card{border:1px solid #ddd;border-radius:8px;padding:10px;background:white;}
+.footer{background:#222;color:#fff;text-align:center;padding:20px;margin-top:40px;}
 </style>
 </head>
 <body>
 <header>Kyledar</header>
-<div class="hero">Make your walls aesthetic</div>
-<div class="sec">
-<a href="shop.html" class="button">Shop Now</a>
+<div class="hero">
+<h1>Make your walls aesthetic</h1>
+<a href="shop.html"><button>Shop Now</button></a>
 </div>
-<div class="footer">© 2025 Kyledar</div>
+<div class="sec"><h2>Featured Posters</h2></div>
+<div class="feature-grid">
+<div class="card">Batman Vs Superman – ₹69</div>
+<div class="card">Wall Street Movie Poster – ₹69</div>
+<div class="card">Minimal Quote Poster – ₹69</div>
+<div class="card">Custom Frame – Upload</div>
+</div>
+<div class="footer">© 2025 Kyledar – Free delivery on all orders</div>
 </body>
 </html>
