@@ -131,10 +131,18 @@ var swiper = new Swiper(".mySwiper", {
 function scrollToSection(id){
   document.getElementById(id)?.scrollIntoView({behavior:'smooth'})
 }
+  var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 15,
+  loop: true,
+  autoplay: { delay: 2000 },
+  pagination: { el: ".swiper-pagination", clickable: true }
+});
 </script>
 
 </body>
 </html>
+
 
 
 
