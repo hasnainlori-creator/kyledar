@@ -581,6 +581,26 @@ body { font-family: 'Inter', sans-serif; }
 .featured-wall img.fade{
   opacity: 0;
 }
+#featuredWall {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 30px 10%;
+}
+
+#featuredWall img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: transform .3s;
+}
+
+#featuredWall img:hover {
+  transform: scale(1.05);
+}
+
 
 
 
