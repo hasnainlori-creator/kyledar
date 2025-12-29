@@ -12,7 +12,7 @@ body{background:#f4efe6;color:#222;overflow-x:hidden;}
 
 /* HERO */
 .hero{
-  height:350px;background: url("hero.jpg") no-repeat center center/cover, #e7dcc3;display:flex;flex-direction:column;
+  height:350px;background: url("https://hasnainlori-creator.github.io/kyledar/hero.jpg") no-repeat center center/cover, #e7dcc3;display:flex;flex-direction:column;
   justify-content:center;align-items:center;text-align:center;
   animation:fadeIn 1s ease forwards;
 }
@@ -117,4 +117,5 @@ body{background:#f4efe6;color:#222;overflow-x:hidden;}
 @media(max-width:600px){
  .hero-title{font-size:28px;}
 }
+
 
