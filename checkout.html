@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout – Kyledar</title>
+  <style>
+    body{font-family:Arial;background:#f4efe6;padding:20px;}
+    h1{text-align:center;}
+    .box{background:white;padding:20px;border-radius:12px;max-width:420px;margin:auto;box-shadow:0 3px 12px rgba(0,0,0,0.2);}
+    input,textarea{
+      width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #ccc;
+    }
+    button{
+      width:100%;padding:12px;background:black;color:white;border:none;border-radius:8px;font-size:16px;cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Checkout</h1>
+
+<div class="box">
+  <h3>Your Details</h3>
+  <input id="name" placeholder="Name" />
+  <input id="phone" placeholder="Phone Number" />
+  <textarea id="address" placeholder="Full Address + Pincode"></textarea>
+
+  <h3 style="margin-top:15px;">Order Summary</h3>
+  <p id="summary"></p>
+  <p><b>Total:</b> ₹<span id="total"></span></p>
+
+  <button onclick="payUPI()">Pay With UPI</button>
+  <br><br>
+  <button style="background:#25D366;" onclick="orderWhatsApp()">Order on WhatsApp</button>
+  <br><br>
+  <button style="background:#555;" onclick="COD()">Cash on Delivery</button>
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let total = cart.reduce((a,b)=>a+b.price,0);
+
+document.getElementById("total").innerText = total;
+document.getElementById("summary").innerText = cart.map(p=>`${p.productName} – ${p.size} – ₹${p.price}`).join("\n");
+
+function payUPI(){
+  window.location.href = `upi://pay?pa=9596864407@fam&pn=Kyledar&am=${total}&cu=INR`;
+}
+
+function orderWhatsApp(){
+  let msg = encodeURIComponent(
+    `ORDER:\nName: ${name.value}\nPhone:${phone.value}\nAddress:${address.value}\nItems:\n${cart.map(p=>p.productName + " ("+p.size+")").join(", ")}\nTOTAL:₹${total}`
+  );
+  window.location.href = `https://wa.me/919596864407?text=${msg}`;
+}
+
+function COD(){
+  alert("COD Order Placed! You will receive a WhatsApp confirmation.");
+}
+</script>
+
+</body>
+</html>
