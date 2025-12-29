@@ -335,6 +335,57 @@ body{background:#f4efe6;color:#222;overflow-x:hidden;}
 .btn.upi { background:#2b6bff; }
 .btn.wa  { background:#25D366; }
 .btn.checkout { background:black; }
+/* HOME NEW UI */
+body { font-family: 'Inter', sans-serif; }
+
+.navbar {
+  display:flex; justify-content:space-between;
+  padding:18px 35px;
+  background:#fff;
+  position:sticky; top:0; z-index:99;
+}
+.navbar nav a { margin-left:20px; text-decoration:none; color:#222; font-weight:500; }
+.navbar .logo { font-size:26px; font-weight:800; }
+
+.hero {
+  height:70vh;
+  background:url("assets/hero.jpg") center/cover no-repeat;
+  display:flex; justify-content:center; align-items:center;
+  text-align:center;
+}
+.hero-text h1 { font-size:58px; font-weight:800; color:#fff; }
+.hero-text h1 span { color:#FFCE35; }
+.hero-btn {
+  display:inline-block; padding:14px 28px; 
+  background:#fff; color:#000; font-weight:600;
+  text-decoration:none; border-radius:8px;
+}
+
+.homepage-layout {
+  display:flex; padding:50px 5%;
+}
+.collections {
+  width:20%;
+  padding-right:20px;
+}
+.collections h3 { font-size:20px; margin-bottom:25px; }
+.collections ul { list-style:none; padding:0; line-height:38px; font-size:17px; }
+
+.home-gallery {
+  width:80%;
+  column-count:3;
+  column-gap:18px;
+}
+.home-gallery img {
+  width:100%; border-radius:12px;
+  margin-bottom:18px;
+  transition:.3s;
+}
+.home-gallery img:hover { transform:scale(1.03); }
+
+.why { padding:70px 5%; text-align:center; }
+.why-features { display:flex; justify-content:center; gap:25px; margin-top:25px; }
+.footer { padding:25px; text-align:center; background:#eee; margin-top:50px; }
 
 /* ---- SHOP NEW UI ---- */
 .shop{
@@ -399,6 +450,7 @@ body{background:#f4efe6;color:#222;overflow-x:hidden;}
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
 
