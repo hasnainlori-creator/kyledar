@@ -1,5 +1,6 @@
 // === CART PANEL OPEN/CLOSE ===
 function openCart() {
+  updateCart();
   document.getElementById("cartPanel").style.right = "0";
 }
 
@@ -12,6 +13,7 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 function addToCart(productName, size, price, img) {
   cart.push({ productName, size, price, img });
   localStorage.setItem("cart", JSON.stringify(cart));
+  updateCart();
   alert("Added to cart!");
 }
 
@@ -42,4 +44,20 @@ function closePopup() {
 // CHECKOUT
 function goToCheckout() {
   window.location.href = "checkout.html";
+}
+function updateCart(){
+    let cartItemsDiv = document.getElementById("cartItems");
+    let totalSpan = document.getElementById("cartTotal");
+
+    cartItemsDiv.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price;
+        cartItemsDiv.innerHTML += `
+            <p>${item.productName} – ${item.size} – ₹${item.price}</p>
+        `;
+    });
+
+    totalSpan.innerText = total;
 }
