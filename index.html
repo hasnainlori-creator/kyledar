@@ -175,45 +175,36 @@ const images = [
   "room19.jpg","room20.jpg","room21.jpg"
 ];
 
-function shuffle(arr){ return arr.sort(()=>Math.random() - 0.5); }
+function shuffle(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
 
-function loadWall(){
+function loadWall() {
   const container = document.getElementById("featuredWall");
+  const max = parseInt(container.dataset.maxImages || 9);
   container.innerHTML = "";
-  let selected = shuffle(images).slice(0,9);
 
-  selected.forEach(img=>{
+  let selected = shuffle(images).slice(0, max);
+  selected.forEach((img, index) => {
     let item = document.createElement("img");
     item.src = `assets/gallery/${img}`;
-    item.classList.add("fade");
+    if (index === 0 || index === 3) item.classList.add("big");
     container.appendChild(item);
   });
 }
 
-// ---- Masonry Shuffle (1 poster changes every 2.5 sec) ----
-function shuffleOne(){
-  const container = document.getElementById("featuredWall");
-  const posters = container.querySelectorAll("img");
-  if(posters.length === 0) return;
-
-  let randIndex = Math.floor(Math.random()*posters.length);
-  let item = posters[randIndex];
-
-  let newImage = shuffle(images)[0];
-  item.classList.add("fade-out");
-
-  setTimeout(()=>{
-    item.src = `assets/gallery/${newImage}`;
-    item.classList.remove("fade-out");
-  },400);
+function shuffleOne() {
+  loadWall();
 }
 
-// initial load
-loadWall();
-setInterval(shuffleOne, 2500);
+loadWall();               
+setInterval(shuffleOne, 5000); 
 </script>
 </body>
 </html>
+</body>
+</html>
+
 
 
 
