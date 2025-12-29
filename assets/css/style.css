@@ -608,6 +608,35 @@ body { font-family: 'Inter', sans-serif; }
 #featuredWall img:hover {
   transform: scale(1.05);
 }
+/* ===== Aesthetic Double Slider ===== */
+.visual-slider {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  padding: 30px 0;
+}
+
+.visual-slider .row {
+  display: flex;
+  gap: 20px;
+  animation: scroll 18s linear infinite;
+}
+
+.visual-slider .row2 {
+  animation-direction: reverse;
+}
+
+.visual-slider img {
+  height: 250px;
+  width: auto;
+  border-radius: 12px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 
 
 
