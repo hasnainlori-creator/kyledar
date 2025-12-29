@@ -1,3 +1,11 @@
+// === CART PANEL OPEN/CLOSE ===
+function openCart() {
+  document.getElementById("cartPanel").style.right = "0";
+}
+
+function closeCart() {
+  document.getElementById("cartPanel").style.right = "-100%";
+}
 // CART SYSTEM
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
