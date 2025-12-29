@@ -167,15 +167,55 @@ function loadFeaturedWall() {
     wall.appendChild(img);
   });
 }
+<script>
+const images = [
+  "room1.jpg","room2.jpg","room3.jpg","room4.jpg","room5.jpg","room6.jpg",
+  "room7.jpg","room8.jpg","room9.jpg","room10.jpg","room11.jpg","room12.jpg",
+  "room13.jpg","room14.jpg","room15.jpg","room16.jpg","room17.jpg","room18.jpg",
+  "room19.jpg","room20.jpg","room21.jpg"
+];
 
-// Load once at start
-loadFeaturedWall();
+function shuffle(arr){ return arr.sort(()=>Math.random() - 0.5); }
 
-// Change every 5 seconds (5000 ms)
-setInterval(loadFeaturedWall, 5000);
+function loadWall(){
+  const container = document.getElementById("featuredWall");
+  container.innerHTML = "";
+  let selected = shuffle(images).slice(0,9);
+
+  selected.forEach(img=>{
+    let item = document.createElement("img");
+    item.src = `assets/gallery/${img}`;
+    item.classList.add("fade");
+    container.appendChild(item);
+  });
+}
+
+// ---- Masonry Shuffle (1 poster changes every 2.5 sec) ----
+function shuffleOne(){
+  const container = document.getElementById("featuredWall");
+  const posters = container.querySelectorAll("img");
+  if(posters.length === 0) return;
+
+  let randIndex = Math.floor(Math.random()*posters.length);
+  let item = posters[randIndex];
+
+  let newImage = shuffle(images)[0];
+  item.classList.add("fade-out");
+
+  setTimeout(()=>{
+    item.src = `assets/gallery/${newImage}`;
+    item.classList.remove("fade-out");
+  },400);
+}
+
+// initial load
+loadWall();
+setInterval(shuffleOne, 2500);
+</script>
 </script>
 </body>
 </html>
+
 
 
 
