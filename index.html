@@ -1,225 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Kyledar – Premium Posters</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kyledar – Premium Posters</title>
 
-<link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-<!-- Swiper Carousel CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper Carousel CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
 
-<header class="nav">
-  <div class="logo">KYLE<span style="color:#ff6600;">DAR</span></div>
-  <nav>
-  <a href="https://hasnainlori-creator.github.io/kyledar/">Home</a>
-<a href="https://hasnainlori-creator.github.io/kyledar/shop.html">Shop</a>
-<a href="https://hasnainlori-creator.github.io/kyledar/upload.html">Upload</a>
-<a href="https://hasnainlori-creator.github.io/kyledar/gallery.html">Gallery</a>
-<a href="https://hasnainlori-creator.github.io/kyledar/contact.html">Contact</a>
-  </nav>
-</header>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="logo">KYLE<span style="color:#ff6600;">DAR</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="upload.html">Upload</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<!-- 🎯 TOP BANNER -->
-<section class="top-banner">
-  <h2>Make Your Walls Aesthetic ✨</h2>
-  <p>Premium Posters • Custom Frames • Free Delivery</p>
-  <a href="https://hasnainlori-creator.github.io/kyledar/shop.html" class="hero-btn">Shop Posters →</a>
-</section>
 
-<!-- ==== PREMIUM ROOM WALL GALLERY ==== -->
-<section class="wall-gallery">
-  <h2 class="section-title">TURN EMPTY WALLS INTO STORIES</h2>
-
-  <div class="wall-row row1">
-    <div class="track">
-      <img src="assets/gallery/room1.jpg">
-      <img src="assets/gallery/room2.jpg">
-      <img src="assets/gallery/room3.jpg">
-      <img src="assets/gallery/room4.jpg">
-      <img src="assets/gallery/room5.jpg">
-      <img src="assets/gallery/room6.jpg">
-      <img src="assets/gallery/room7.jpg">
-      <img src="assets/gallery/room8.jpg">
-      <img src="assets/gallery/room9.jpg">
-      <img src="assets/gallery/room10.jpg">
-      <img src="assets/gallery/room11.jpg">
-      <img src="assets/gallery/room12.jpg">
-      <img src="assets/gallery/room13.jpg">
-      <img src="assets/gallery/room14.jpg">
-      <img src="assets/gallery/room15.jpg">
-      <img src="assets/gallery/room16.jpg">
-      <img src="assets/gallery/room17.jpg">
-      <img src="assets/gallery/room18.jpg">
-      <img src="assets/gallery/room19.jpg">
-      <img src="assets/gallery/room20.jpg">
-      <img src="assets/gallery/room21.jpg">
+  <!-- 🟡 TOP BANNER (Swiper) -->
+  <section class="top-banner">
+    <h2 class="hero-title">Make Your Walls Aesthetic ✨</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="assets/gallery/room1.jpg"></div>
+        <div class="swiper-slide"><img src="assets/gallery/room2.jpg"></div>
+        <div class="swiper-slide"><img src="assets/gallery/room3.jpg"></div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-  </div>
+  </section>
 
-  <div class="wall-row row2">
-    <div class="track">
-      <img src="assets/gallery/room7.jpg">
-      <img src="assets/gallery/room8.jpg">
-      <img src="assets/gallery/room9.jpg">
-      <img src="assets/gallery/room10.jpg">
-      <img src="assets/gallery/room11.jpg">
-      <img src="assets/gallery/room12.jpg">
-      <img src="assets/gallery/room13.jpg">
-      <img src="assets/gallery/room14.jpg">
-      <img src="assets/gallery/room15.jpg">
-      <img src="assets/gallery/room16.jpg">
-      <img src="assets/gallery/room17.jpg">
-      <img src="assets/gallery/room18.jpg">
-      <img src="assets/gallery/room19.jpg">
-      <img src="assets/gallery/room20.jpg">
-      <img src="assets/gallery/room21.jpg">
-      <img src="assets/gallery/room1.jpg">
-      <img src="assets/gallery/room2.jpg">
-      <img src="assets/gallery/room3.jpg">
+
+  <!-- 🟢 COLLECTIONS -->
+  <section class="collections">
+    <h2>Collections</h2>
+    <ul class="collection-list">
+      <li><a href="shop.html#anime">Anime Posters</a></li>
+      <li><a href="shop.html#marvel">Marvel / DC</a></li>
+      <li><a href="shop.html#cars">Cars & Supercars</a></li>
+      <li><a href="shop.html#fitness">Gym Fitness</a></li>
+      <li><a href="shop.html#football">Football Legends</a></li>
+    </ul>
+  </section>
+
+
+  <!-- 🟣 IMAGE GALLERY (AUTO SHUFFLE) -->
+  <section class="featured-section">
+    <h2 class="section-title">TRANSFORM EMPTY WALLS INTO STORIES</h2>
+    <div id="featuredWall" class="featured-wall" data-max-images="9"></div>
+  </section>
+
+
+  <!-- 🔵 WHY SECTION -->
+  <section class="why">
+    <h2>Why Kyledar?</h2>
+    <div class="why-flex">
+      <div>⚡ Fast Delivery – 2 Days</div>
+      <div>💳 Cashless & UPI Secure</div>
+      <div>🧾 Custom Size / A3 / A4 prints</div>
+      <div>✨ Premium Gloss Finishing</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ⭐ COLLECTIONS -->
-<section class="collections">
-  <h2>Collections</h2>
- <ul class="collection-list">
- <li><a href="https://hasnainlori-creator.github.io/kyledar/shop.html#anime">Anime Posters</a></li>
-<li><a href="https://hasnainlori-creator.github.io/kyledar/shop.html#marvel">Marvel / DC</a></li>
-<li><a href="https://hasnainlori-creator.github.io/kyledar/shop.html#cars">Cars & Supercars</a></li>
-<li><a href="https://hasnainlori-creator.github.io/kyledar/shop.html#fitness">Gym Fitness</a></li>
-<li><a href="https://hasnainlori-creator.github.io/kyledar/shop.html#football">Football Legends</a></li>
-</ul>
 
-</section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Kyledar — All Rights Reserved</p>
+  </footer>
 
-<!-- 🎨 IMAGE GALLERY -->
-<section class="featured-section">
-  <h2 class="section-title">TRANSFORM EMPTY WALLS INTO STORIES</h2>
-  <div id="featuredWall" class="featured-wall" data-max-images="9"></div>
-</section>
-<!-- ⭐ WHY SECTION -->
-<section class="why">
-  <h2>Why Kyledar?</h2>
-  <div class="why-flex">
-    <div>⚡ Fast Delivery – 2 Days</div>
-    <div>💳 Cashless & UPI Secure</div>
-    <div>🖼 Custom Size / A3 / A4 Prints</div>
-    <div>🥇 Premium Gloss Finishing</div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© 2025 Kyledar – All Rights Reserved</p>
-</footer>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script>
-var swiper = new Swiper(".mySwiper", {
-  autoplay: { delay: 2000 },
-  pagination: { el: ".swiper-pagination" },
-});
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-function scrollToSection(id){
-  document.getElementById(id)?.scrollIntoView({behavior:'smooth'})
-}
-  var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 15,
-  loop: true,
-  autoplay: { delay: 2000 },
-  pagination: { el: ".swiper-pagination", clickable: true }
-});
-</script>
-<script>
-function shuffle(arr) {
-  return arr.sort(() => Math.random() - 0.5);
-}
-
-function loadFeaturedWall() {
-  const wall = document.getElementById("featuredWall");
-  const max = parseInt(wall.dataset.maxImages) || 9;
-
-  const posters = [
-    "room1.jpg","room2.jpg","room3.jpg","room4.jpg","room5.jpg",
-    "room6.jpg","room7.jpg","room8.jpg","room9.jpg","room10.jpg",
-    "room11.jpg","room12.jpg","room13.jpg","room14.jpg","room15.jpg",
-    "room16.jpg","room17.jpg","room18.jpg","room19.jpg","room20.jpg","room21.jpg"
-  ];
-
-  wall.innerHTML = ""; // Clear previous
-  shuffle(posters).slice(0, max).forEach(name => {
-    const img = document.createElement("img");
-    img.src = `assets/gallery/${name}`;
-    img.alt = name;
-    img.loading = "lazy";
-    wall.appendChild(img);
-  });
-}
+  <!-- Swiper Initialize -->
   <script>
-const images = [
-  "room1.jpg","room2.jpg","room3.jpg","room4.jpg","room5.jpg",
-  "room6.jpg","room7.jpg","room8.jpg","room9.jpg","room10.jpg",
-  "room11.jpg","room12.jpg","room13.jpg","room14.jpg","room15.jpg",
-  "room16.jpg","room17.jpg","room18.jpg","room19.jpg","room20.jpg","room21.jpg"
-];
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 15,
+      loop: true,
+      autoplay: { delay: 2000 },
+      pagination: { el: ".swiper-pagination", clickable: true }
+    });
+  </script>
 
-function shuffle(arr){ return arr.sort(()=>Math.random()-0.5); }
+  <!-- 🔥 Auto-Shuffle Poster Wall (FINAL WORKING SCRIPT) -->
+  <script>
+    const images = [
+      "room1.jpg","room2.jpg","room3.jpg","room4.jpg","room5.jpg",
+      "room6.jpg","room7.jpg","room8.jpg","room9.jpg","room10.jpg",
+      "room11.jpg","room12.jpg","room13.jpg","room14.jpg","room15.jpg",
+      "room16.jpg","room17.jpg","room18.jpg","room19.jpg","room20.jpg","room21.jpg"
+    ];
 
-function loadWall(){
-  const container = document.getElementById("featuredWall");
-  const max = parseInt(container.dataset.maxImages || 9);
-  container.innerHTML = "";
+    function shuffle(arr){ return arr.sort(() => Math.random() - 0.5); }
 
-  let selected = shuffle(images).slice(0, max);
-  selected.forEach((img, index) => {
-    let item = document.createElement("img");
-    item.src = `assets/gallery/${img}`;
-    container.appendChild(item);
-  });
-}
+    function loadWall(){
+      const container = document.getElementById("featuredWall");
+      const max = parseInt(container.dataset.maxImages || 9);
+      container.innerHTML = "";
 
-loadWall();
-setInterval(loadWall, 5000);
-</script>
+      let selected = shuffle(images).slice(0, max);
+
+      selected.forEach(name => {
+        const img = document.createElement("img");
+        img.src = `assets/gallery/${name}`;  // ✅ Correct image path
+        img.loading = "lazy";
+        container.appendChild(img);
+      });
+    }
+
+    loadWall();
+    setInterval(loadWall, 5000);
+  </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
