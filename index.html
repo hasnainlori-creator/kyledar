@@ -51,6 +51,43 @@
   <a id="waBtn" class="btn" target="_blank">Order on WhatsApp</a>
 </div>
 <script src="assets/js/tilt.js"></script>
+  <!-- PRODUCT POPUP -->
+<div id="popup" style="
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.6); display:none; justify-content:center; align-items:center;
+">
+  <div style="background:white; padding:25px; border-radius:12px; width:320px; text-align:center;">
+    <img id="popup-img" src="" style="width:100%; border-radius:10px; margin-bottom:15px;">
+    <h2 id="popup-title"></h2>
+    
+    <label style="font-weight:600;">Select Size:</label>
+    <select id="selectedSize" onchange="
+      let p={A4:69,A3:109,A2:249,Canvas:499}[this.value];
+      document.getElementById('popup-price').innerText='₹'+p;
+    " style="padding:8px;border-radius:6px;margin:10px 0;">
+      <option value="A4">A4 – ₹69</option>
+      <option value="A3">A3 – ₹109</option>
+      <option value="A2">A2 – ₹249</option>
+      <option value="Canvas">Canvas – ₹499</option>
+    </select>
+
+    <p style="font-size:20px; font-weight:700;">
+      Price: <span id="popup-price">₹69</span>
+    </p>
+
+    <button id="buyBtn" style="padding:10px 18px; background:black; color:white; border:none; border-radius:8px; cursor:pointer;">
+      Add to Cart
+    </button>
+    <br><br>
+    <button onclick="closePopup()" style="padding:8px 14px; background:#ccc; border:none; border-radius:8px;">
+      Close
+    </button>
+  </div>
+</div>
+
+<!-- LINK SCRIPT -->
+<script src="script.js"></script>
 </body>
 
 </html>
+
