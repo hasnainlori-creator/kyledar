@@ -482,54 +482,67 @@ body { font-family: 'Inter', sans-serif; }
 .footer{text-align:center;padding:25px;background:#000;color:white;}
 
 }
-/* ==== ROOM WALL SLIDER ==== */
-.room-wall-section {
+/* ==== PREMIUM WALL SLIDER ==== */
+.wall-gallery {
   padding: 60px 5%;
   text-align: center;
 }
 
-.room-wall-section .section-title {
+.wall-gallery .section-title {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 30px;
 }
 
-.walls-slider {
+.wall-row {
   overflow: hidden;
   width: 100%;
+  margin-bottom: 20px;
 }
 
-.walls-track {
-  display: grid;
-  grid-template-columns: repeat(21, 1fr);
-  gap: 10px;
-  animation: scrollWalls 35s linear infinite;
+.wall-row .track {
+  display: flex;
+  gap: 15px;
+  animation: scrollLeft 30s linear infinite;
 }
 
-.walls-track img {
-  width: 100%;
-  height: 160px;
+.wall-row.row2 .track {
+  animation-duration: 35s;
+  animation-direction: reverse;
+}
+
+.wall-row img {
+  width: 280px;
+  height: 180px;
+  border-radius: 12px;
   object-fit: cover;
-  border-radius: 10px;
+  filter: brightness(0.95);
+  transition: .3s;
 }
 
-@keyframes scrollWalls {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-60%); }
+.wall-row img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
-@media (max-width: 600px) {
-  .walls-track img {
-    height: 120px;
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media(max-width:800px){
+  .wall-row img {
+    width: 200px;
+    height: 140px;
   }
 }
 
-
-
-
-
-
-
+@media(max-width:500px){
+  .wall-row img {
+    width: 150px;
+    height: 110px;
+  }
+}
 
 
 
