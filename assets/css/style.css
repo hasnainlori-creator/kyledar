@@ -480,17 +480,50 @@ body { font-family: 'Inter', sans-serif; }
 .why{padding:60px 5%;text-align:center;}
 .why-flex{display:flex;justify-content:center;gap:25px;font-size:18px;font-weight:600;}
 .footer{text-align:center;padding:25px;background:#000;color:white;}
-/* --- Slider Images Fix --- */
-.slider-section {
-  padding: 30px 0;
+
+}
+/* ==== ROOM WALL SLIDER ==== */
+.room-wall-section {
+  padding: 60px 5%;
+  text-align: center;
 }
 
-.slider-section img {
-  width: 100%;
-  height: 350px;     /* 👈 reduce height */
-  object-fit: cover; /* keeps image nice */
-  border-radius: 18px; /* optional rounded corners */
+.room-wall-section .section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
+
+.walls-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.walls-track {
+  display: grid;
+  grid-template-columns: repeat(21, 1fr);
+  gap: 10px;
+  animation: scrollWalls 35s linear infinite;
+}
+
+.walls-track img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@keyframes scrollWalls {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-60%); }
+}
+
+@media (max-width: 600px) {
+  .walls-track img {
+    height: 120px;
+  }
+}
+
 
 
 
