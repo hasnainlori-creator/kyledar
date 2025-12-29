@@ -12,13 +12,13 @@ body{background:#f4efe6;color:#222;overflow-x:hidden;}
 
 /* ===== HERO (NEW) ===== */
 .hero{
-  height: 100vh;
-  background: url("assets/hero.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
+    height: 100vh;
+    background: url("../hero.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
 }
 
 .hero::after{
@@ -385,6 +385,7 @@ body{background:#f4efe6;color:#222;overflow-x:hidden;}
 .btn.upi { background:#2b6bff; }
 .btn.wa  { background:#25D366; }
 .btn.checkout { background:black; }
+
 
 
 
