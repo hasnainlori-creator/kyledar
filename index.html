@@ -143,28 +143,40 @@ function scrollToSection(id){
 });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+function shuffle(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
+
+function loadFeaturedWall() {
   const wall = document.getElementById("featuredWall");
   const max = parseInt(wall.dataset.maxImages) || 9;
 
   const posters = [
-    "room1.jpg", "room2.jpg", "room3.jpg", "room4.jpg", "room5.jpg",
-    "room6.jpg", "room7.jpg", "room8.jpg", "room9.jpg", "room10.jpg",
-    "room11.jpg", "room12.jpg", "room13.jpg", "room14.jpg", "room15.jpg",
-    "room16.jpg", "room17.jpg", "room18.jpg", "room19.jpg", "room20.jpg", "room21.jpg"
+    "room1.jpg","room2.jpg","room3.jpg","room4.jpg","room5.jpg",
+    "room6.jpg","room7.jpg","room8.jpg","room9.jpg","room10.jpg",
+    "room11.jpg","room12.jpg","room13.jpg","room14.jpg","room15.jpg",
+    "room16.jpg","room17.jpg","room18.jpg","room19.jpg","room20.jpg","room21.jpg"
   ];
 
-  posters.slice(0, max).forEach(name => {
+  wall.innerHTML = ""; // Clear previous
+  shuffle(posters).slice(0, max).forEach(name => {
     const img = document.createElement("img");
     img.src = `assets/gallery/${name}`;
     img.alt = name;
     img.loading = "lazy";
     wall.appendChild(img);
   });
-});
+}
+
+// Load once at start
+loadFeaturedWall();
+
+// Change every 5 seconds (5000 ms)
+setInterval(loadFeaturedWall, 5000);
 </script>
 </body>
 </html>
+
 
 
 
