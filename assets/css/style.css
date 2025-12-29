@@ -10,20 +10,82 @@ body{background:#f4efe6;color:#222;overflow-x:hidden;}
 .nav a{color:white;text-decoration:none;margin-left:15px;font-size:16px;}
 .logo{font-size:22px;font-weight:700;}
 
-/* HERO */
+/* ===== HERO (NEW) ===== */
 .hero{
-  height:350px;background: url("https://hasnainlori-creator.github.io/kyledar/hero.jpg") no-repeat center center/cover, #e7dcc3;display:flex;flex-direction:column;
-  justify-content:center;align-items:center;text-align:center;
-  animation:fadeIn 1s ease forwards;
+  height: 100vh;
+  background: url("assets/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
 }
-.hero-title{font-size:40px;font-weight:700;margin-bottom:10px;}
-.hero-sub{font-size:18px;margin-bottom:20px;}
-.btn{
-  background:#222;color:white;padding:12px 20px;border-radius:8px;
-  text-decoration:none;font-size:17px;transition:0.3s;
-}
-.btn:hover{opacity:.8;transform:translateY(-2px);}
 
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
+  top:0;
+  left:0;
+}
+
+.hero-content{
+  position: relative;
+  z-index:2;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  padding:40px 60px;
+  border-radius:18px;
+  animation:fadeUp 1.2s ease forwards;
+}
+
+.hero-content h1{
+  font-size:60px;
+  color:white;
+  font-weight:800;
+  line-height:1.1;
+}
+
+.hero-content h1 span{
+  color:#ffd65b;
+}
+
+.hero-content p{
+  color:#fff;
+  margin:12px 0 28px;
+  font-size:19px;
+}
+
+.cta-btn{
+  background:#fff;
+  color:#000;
+  padding:14px 32px;
+  border-radius:50px;
+  font-size:18px;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  transition:.25s;
+}
+
+.cta-btn:hover{
+  background:#ffd65b;
+  transform:translateY(-3px);
+}
+
+/* Animation */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* Mobile fix */
+@media(max-width:600px){
+  .hero-content h1{font-size:38px;}
+  .hero{height:80vh;}
+}
 /* WHY */
 .why{padding:60px 25px;text-align:center;}
 .features{
@@ -323,6 +385,7 @@ body{background:#f4efe6;color:#222;overflow-x:hidden;}
 .btn.upi { background:#2b6bff; }
 .btn.wa  { background:#25D366; }
 .btn.checkout { background:black; }
+
 
 
 
