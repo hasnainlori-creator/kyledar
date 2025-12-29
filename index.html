@@ -43,12 +43,18 @@
 
 <!-- CART PANEL -->
 <div id="cartPanel" class="cart-panel">
-  <button onclick="closeCart()" class="close">✖</button>
-  <h2>Your Cart</h2>
-  <div id="cartItems"></div>
-  <h3>Total: ₹<span id="cartTotal">0</span></h3>
-  <a id="upiBtn" class="btn" target="_blank">Pay with UPI</a><br /><br />
-  <a id="waBtn" class="btn" target="_blank">Order on WhatsApp</a>
+    <button onclick="closeCart()" class="close">✕</button>
+    <h2>Your Cart</h2>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <h3 class="cart-total">Total: ₹<span id="cartTotal">0</span></h3>
+
+    <div class="cart-buttons">
+        <a id="upiBtn" class="btn upi" target="_blank">Pay with UPI</a>
+        <a id="waBtn" class="btn wa" target="_blank">Order on WhatsApp</a>
+        <button onclick="goToCheckout()" class="btn checkout">Checkout →</button>
+    </div>
 </div>
 <script src="assets/js/tilt.js"></script>
   <!-- PRODUCT POPUP -->
@@ -92,6 +98,7 @@
 </body>
 
 </html>
+
 
 
 
