@@ -4,7 +4,7 @@ function openCart() {
 }
 
 function closeCart() {
-  document.getElementById("cartPanel").style.right = "-100%";
+  document.getElementById("cartPanel").style.right = "-350px";
 }
 // CART SYSTEM
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
