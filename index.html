@@ -2,109 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kyledar – Make Your Walls Aesthetic</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="assets/js/script.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kyledar – Premium Posters</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="nav">
-  <div class="logo">KYLEDAR</div>
+<header class="navbar">
+  <div class="logo">KYLE<span style="color:#FFCE35;">DAR</span></div>
   <nav>
-    <a href="index.html">Home</a>
+    <a href="index.html" class="active">Home</a>
     <a href="shop.html">Shop</a>
     <a href="upload.html">Upload</a>
     <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact</a>
-    <a href="#" onclick="openCart()" class="cartbtn">🛒</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-      <h1>Make Your Walls<br><span>Aesthetic</span></h1>
-      <p>Premium Posters • Custom Frames • Free Delivery</p>
-      <a href="shop.html" class="cta-btn">Shop Frames →</a>
+  <div class="hero-text">
+    <h1>Make Your Walls <span>Aesthetic</span></h1>
+    <p>Premium Posters • Custom Frames • Free Delivery</p>
+    <a href="shop.html" class="hero-btn">Shop Posters →</a>
   </div>
 </section>
+
+<!-- MAIN GRID LAYOUT -->
+<div class="homepage-layout">
+
+  <!-- LEFT CATEGORIES -->
+  <aside class="collections">
+    <h3>Collections</h3>
+    <ul>
+      <li>🎴 Anime Posters</li>
+      <li>🦸 Marvel / DC</li>
+      <li>🏎 Cars / Supercars</li>
+      <li>💪 Gym Fitness</li>
+      <li>👩 Girls Aesthetic</li>
+      <li>⚽ Football Legends</li>
+      <li>🎮 Gaming Posters</li>
+      <li>🌄 Nature & Aesthetic</li>
+      <li>✨ Custom Posters</li>
+    </ul>
+  </aside>
+
+  <!-- IMAGE GALLERY -->
+  <section class="home-gallery">
+    <img src="assets/gallery/room1.jpg">
+    <img src="assets/gallery/room2.jpg">
+    <img src="assets/gallery/room3.jpg">
+    <img src="assets/gallery/room4.jpg">
+    <img src="assets/gallery/room5.jpg">
+    <img src="assets/gallery/room6.jpg">
+  </section>
+
+</div>
+
+<!-- WHY SECTION -->
 <section class="why">
-  <h2>Why Choose Kyledar?</h2>
-  <div class="features">
-    <div class="feature-card">🖼 Custom Upload Frames</div>
-    <div class="feature-card">🚚 Free Delivery in India</div>
-    <div class="feature-card">💳 Cashless – UPI Payment</div>
-    <div class="feature-card">📱 WhatsApp Ordering</div>
+  <h2>Why KYLEDAR?</h2>
+  <div class="why-features">
+    <div>🚚 Free Delivery</div>
+    <div>🛡 Premium Quality Prints</div>
+    <div>🖼 Custom Sizes Available</div>
+    <div>💳 Cashless & UPI Secure</div>
   </div>
 </section>
 
 <footer class="footer">
-  © 2025 Kyledar – All Rights Reserved
+  <p>© 2025 Kyledar – All Rights Reserved</p>
 </footer>
 
-<!-- CART PANEL -->
-<div id="cartPanel" class="cart-panel">
-  <button onclick="closeCart()" class="close-btn">×</button>
-  <h2 class="cart-title">Your Cart</h2>
-
-  <div id="cartItems" class="cart-items"></div>
-
-  <div class="cart-total-box">
-      <h3>Total: <span id="cartTotal">0</span>₹</h3>
-  </div>
-
-  <div class="cart-buttons">
-      <a id="upiBtn" class="btn upi" target="_blank">Pay with UPI</a>
-      <a id="waBtn" class="btn wa" target="_blank">Order on WhatsApp</a>
-      <button onclick="goToCheckout()" class="btn checkout">Checkout →</button>
-  </div>
-</div>
-<script src="assets/js/tilt.js"></script>
-  <!-- PRODUCT POPUP -->
-<div id="popup" style="
-  position:fixed; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.6); display:none; justify-content:center; align-items:center;
-">
-  <div style="background:white; padding:25px; border-radius:12px; width:320px; text-align:center;">
-    <img id="popup-img" src="" style="width:100%; border-radius:10px; margin-bottom:15px;">
-    <h2 id="popup-title"></h2>
-    
-    <label style="font-weight:600;">Select Size:</label>
-    <select id="selectedSize" onchange="
-      let p={A4:69,A3:109,A2:249,Canvas:499}[this.value];
-      document.getElementById('popup-price').innerText='₹'+p;
-    " style="padding:8px;border-radius:6px;margin:10px 0;">
-      <option value="A4">A4 – ₹69</option>
-      <option value="A3">A3 – ₹109</option>
-      <option value="A2">A2 – ₹249</option>
-      <option value="Canvas">Canvas – ₹499</option>
-    </select>
-
-    <p style="font-size:20px; font-weight:700;">
-      Price: <span id="popup-price">₹69</span>
-    </p>
-
-    <button id="buyBtn" style="padding:10px 18px; background:black; color:white; border:none; border-radius:8px; cursor:pointer;">
-      Add to Cart
-    </button>
-    <br><br>
-    <button onclick="closePopup()" style="padding:8px 14px; background:#ccc; border:none; border-radius:8px;">
-      Close
-    </button>
-  </div>
-</div>
-
-<!-- LINK SCRIPT -->
-<script src="assets/js/tilt.js"></script>
-<script src="script.js"></script>
-  
 </body>
-
 </html>
-
-
-
-
-
-
-
