@@ -142,9 +142,42 @@ function scrollToSection(id){
   pagination: { el: ".swiper-pagination", clickable: true }
 });
 </script>
+<script>
+const images = [
+  "room1.jpg","room2.jpg","room3.jpg","room4.jpg","room5.jpg","room6.jpg",
+  "room7.jpg","room8.jpg","room9.jpg","room10.jpg","room11.jpg","room12.jpg",
+  "room13.jpg","room14.jpg","room15.jpg","room16.jpg","room17.jpg","room18.jpg",
+  "room19.jpg","room20.jpg","room21.jpg"
+];
 
+function loadWall(){
+  const container = document.getElementById("featuredWall");
+  container.innerHTML = "";
+  let selected = shuffle(images).slice(0,5);
+
+  selected.forEach((img, index)=>{
+    let item = document.createElement("img");
+    item.src = `assets/gallery/${img}`;
+    if(index === 0 || index === 3) item.classList.add("big");
+    container.appendChild(item);
+  });
+}
+
+function shuffle(arr){
+  return arr.sort(()=>Math.random() - 0.5);
+}
+
+loadWall();  // first load
+
+setInterval(()=>{
+  const imgs = document.querySelectorAll("#featuredWall img");
+  imgs.forEach(img=>img.classList.add("fade"));
+  setTimeout(loadWall,300);
+}, 4000);
+</script>
 </body>
 </html>
+
 
 
 
