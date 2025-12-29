@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kyledar – Premium Posters</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kyledar – Premium Posters</title>
+
+<link rel="stylesheet" href="assets/css/style.css" />
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Swiper Carousel CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
+
 <body>
 
-<header class="navbar">
-  <div class="logo">KYLE<span style="color:#FFCE35;">DAR</span></div>
+<header class="nav">
+  <div class="logo">KYLE<span style="color:#ff6600;">DAR</span></div>
   <nav>
     <a href="index.html" class="active">Home</a>
     <a href="shop.html">Shop</a>
@@ -22,60 +27,81 @@
   </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>Make Your Walls <span>Aesthetic</span></h1>
-    <p>Premium Posters • Custom Frames • Free Delivery</p>
-    <a href="shop.html" class="hero-btn">Shop Posters →</a>
+<!-- 🎯 TOP BANNER -->
+<section class="top-banner">
+  <h2>Make Your Walls Aesthetic ✨</h2>
+  <p>Premium Posters • Custom Frames • Free Delivery</p>
+  <a href="shop.html" class="btn shop-btn">Shop Posters →</a>
+</section>
+
+<!-- 🖼 SLIDER / CAROUSEL -->
+<section class="slider-section">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="assets/gallery/moon1.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/gallery/moon2.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/gallery/moon3.jpg" /></div>
+      <div class="swiper-slide"><img src="assets/gallery/moon4.jpg" /></div>
+    </div>
+    <div class="swiper-pagination"></div>
   </div>
 </section>
 
-<!-- MAIN GRID LAYOUT -->
-<div class="homepage-layout">
+<!-- ⭐ COLLECTIONS -->
+<section class="collections">
+  <h2>Collections</h2>
+  <ul class="collection-list">
+    <li onclick="scrollToSection('anime')">Anime Posters</li>
+    <li onclick="scrollToSection('cars')">Cars & Supercars</li>
+    <li onclick="scrollToSection('gaming')">Gaming Posters</li>
+    <li onclick="scrollToSection('fitness')">Gym Fitness</li>
+    <li onclick="scrollToSection('legends')">Football Legends</li>
+    <li onclick="scrollToSection('custom')">Custom Posters</li>
+  </ul>
+</section>
 
-  <!-- LEFT CATEGORIES -->
-  <aside class="collections">
-    <h3>Collections</h3>
-    <ul>
-      <li>🎴 Anime Posters</li>
-      <li>🦸 Marvel / DC</li>
-      <li>🏎 Cars / Supercars</li>
-      <li>💪 Gym Fitness</li>
-      <li>👩 Girls Aesthetic</li>
-      <li>⚽ Football Legends</li>
-      <li>🎮 Gaming Posters</li>
-      <li>🌄 Nature & Aesthetic</li>
-      <li>✨ Custom Posters</li>
-    </ul>
-  </aside>
+<!-- 🎨 IMAGE GALLERY -->
+<section class="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <img src="assets/gallery/moon1.jpg" />
+    <img src="assets/gallery/moon2.jpg" />
+    <img src="assets/gallery/moon3.jpg" />
+    <img src="assets/gallery/moon4.jpg" />
+    <img src="assets/gallery/moon5.jpg" />
+    <img src="assets/gallery/moon6.jpg" />
+  </div>
+</section>
 
-  <!-- IMAGE GALLERY -->
-  <section class="home-gallery">
-    <img src="assets/gallery/room1.jpg">
-    <img src="assets/gallery/room2.jpg">
-    <img src="assets/gallery/room3.jpg">
-    <img src="assets/gallery/room4.jpg">
-    <img src="assets/gallery/room5.jpg">
-    <img src="assets/gallery/room6.jpg">
-  </section>
-
-</div>
-
-<!-- WHY SECTION -->
+<!-- ⭐ WHY SECTION -->
 <section class="why">
-  <h2>Why KYLEDAR?</h2>
-  <div class="why-features">
-    <div>🚚 Free Delivery</div>
-    <div>🛡 Premium Quality Prints</div>
-    <div>🖼 Custom Sizes Available</div>
+  <h2>Why Kyledar?</h2>
+  <div class="why-flex">
+    <div>⚡ Fast Delivery – 2 Days</div>
     <div>💳 Cashless & UPI Secure</div>
+    <div>🖼 Custom Size / A3 / A4 Prints</div>
+    <div>🥇 Premium Gloss Finishing</div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <p>© 2025 Kyledar – All Rights Reserved</p>
 </footer>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+var swiper = new Swiper(".mySwiper", {
+  autoplay: { delay: 2000 },
+  pagination: { el: ".swiper-pagination" },
+});
+
+function scrollToSection(id){
+  document.getElementById(id)?.scrollIntoView({behavior:'smooth'})
+}
+</script>
 
 </body>
 </html>
